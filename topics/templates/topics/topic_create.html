@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h3>Create a new Topic</h3>
+<hr class = "mt-2 mb-4">
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="SAVE">
+</form>
+{% endblock %}

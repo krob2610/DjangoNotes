@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+<h3>Detail of Topic</h3>
+<hr class = "mt-2 mb-4">
+<h1>{{ topic.title }}</h1>
+<p>~{{ topic.created_by }}</p>
+ {% for note in notes %}
+        <a href="{% url 'note-detail' note.pk %}">{{ note.title }}</a>
+    {% empty %}
+        No notes yet.
+    {% endfor %}
+{% endblock %}

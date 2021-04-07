@@ -1,0 +1,18 @@
+
+{% extends "index.html" %}
+
+{% block content %}
+
+<h3>List of Notes</h3>
+<hr class = "mt-2 mb-4">
+<ul class="list-group">
+        {% for note in object_list %}
+            <li class="list-group-item"><a href="{% url 'note-detail' note.pk %}">{{ note.title }}</a></li>
+        {% empty %}
+            <li class="list-group-item">No notes yet.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+

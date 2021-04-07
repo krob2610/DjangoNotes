@@ -1,0 +1,24 @@
+
+{% extends "index.html" %}
+{% load mptt_tags %}
+
+{% block content %}
+<h3>List of Topics</h3>
+<hr class = "mt-2 mb-4">
+<ul>
+    {% recursetree object_list %}
+        <li>
+            <a href="{% url 'topic-detail' node.pk %}">{{ node.title }}</a>
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+
+</ul>
+{% endblock %}
+
+
+

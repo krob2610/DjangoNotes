@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<h3>Detail of Note</h3>
+<hr class = "mt-2 mb-4">
+<h1>{{ object.title }}</h1>
+<div class="card card-body bg-light">{{ object.body }}</div>
+<p>~{{ object.created_by }}</p>
+{% endblock %}
+/////////////////////////
+<p>{{ object.title }}</p>
+<p>{{ object.body }}</p>

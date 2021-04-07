@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<h3>Delete a Note</h3>
+<hr class = "mt-2 mb-4">
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete the note "{{ object }}"?</p>
+    <input type="submit" value="Confirm">
+</form>
+{% endblock %}
